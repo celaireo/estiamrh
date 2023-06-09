@@ -86,6 +86,14 @@
       "password": "estiam",
       "checkbox": false,
       "id": 12
+    },
+    {
+      "firstName": "Amine",
+      "lastName": "Toudert",
+      "email": "amsdertou@gmail.com",
+      "password": "Nadia1964",
+      "checkbox": true,
+      "id": 13
     }
   ]
 }

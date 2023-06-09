@@ -8,11 +8,16 @@ export default function CreerEmployes() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [checkbox, setCheckbox] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
     console.log(checkbox)
     const postData = () => {
         axios.post(`http://localhost:3002/posts`, {
             firstName,
             lastName,
+            email,
+            password,
             checkbox
         }).then(() => {
             history.push('/listEmployes')
@@ -32,11 +37,11 @@ export default function CreerEmployes() {
             
                 <Form.Field>
                     <label>ADRESSE E-MAIL:</label>
-                    <input type='email' placeholder='ADRESSE E-MAIL' onChange={(e) => setFirstName(e.target.value)}/>
+                    <input type='email' placeholder='ADRESSE E-MAIL' onChange={(e) => setEmail(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>MOT DE PASSE:</label>
-                    <input type='password' placeholder='MOT DE PASSE' onChange={(e) => setLastName(e.target.value)}/>
+                    <input type='password' placeholder='MOT DE PASSE' onChange={(e) => setPassword(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <Checkbox label='Etes-vous un administrateur ?' onChange={(e) => setCheckbox(!checkbox)}/>
