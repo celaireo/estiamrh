@@ -5,6 +5,7 @@ import { useHistory } from 'react-router';
 
 export default function CreerEmployes() {
     let history = useHistory();
+    const [IDemploye, setIDemploye] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [checkbox, setCheckbox] = useState(false);
@@ -14,6 +15,7 @@ export default function CreerEmployes() {
     console.log(checkbox)
     const postData = () => {
         axios.post(`http://localhost:3002/posts`, {
+            IDemploye,
             firstName,
             lastName,
             email,
@@ -26,6 +28,10 @@ export default function CreerEmployes() {
     return (
         <div>
             <Form className="create-form">
+                <Form.Field>
+                    <label>ID Employe</label>
+                    <input placeholder='First Name' onChange={(e) => setIDemploye(e.target.value)}/>
+                </Form.Field>
                 <Form.Field>
                     <label>First Name</label>
                     <input placeholder='First Name' onChange={(e) => setFirstName(e.target.value)}/>
