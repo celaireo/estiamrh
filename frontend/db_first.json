@@ -1,0 +1,61 @@
+{
+  "posts": [
+    {
+      "firstName": "Sarah",
+      "lastName": "Amroun",
+      "checkbox": "true",
+      "id": 5
+    },
+    {
+      "firstName": "sonia",
+      "lastName": "sosso",
+      "checkbox": true,
+      "id": 6,
+      "like": 7,
+      "dislike": 1,
+      "jadore": 1
+    },
+    {
+      "firstName": "hana",
+      "lastName": "Montana",
+      "checkbox": "true",
+      "id": 7
+    },
+    {
+      "firstName": "Zara",
+      "lastName": "Gucci",
+      "checkbox": "true",
+      "id": 8
+    },
+    {
+      "firstName": "Florent",
+      "lastName": "ATAKORA",
+      "checkbox": false,
+      "id": 9,
+      "like": 1
+    },
+    {
+      "firstName": "Celaire",
+      "lastName": "OKA",
+      "checkbox": false,
+      "id": 11,
+      "jadore": 1
+    },
+    {
+      "firstName": "Augusta",
+      "lastName": "Memadji",
+      "checkbox": false,
+      "id": 13
+    },
+    {
+      "firstName": "Moise",
+      "lastName": "PANA",
+      "checkbox": false,
+      "id": 14
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
