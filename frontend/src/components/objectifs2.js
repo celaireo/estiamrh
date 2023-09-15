@@ -22,28 +22,31 @@ export default function Objectifsfutur() {
             setObjectif2('');
             setObjectif3('');
             setIDemploye('');
-            history.push('/competences');
         });
+    }
+
+    const handleSuivantClick = () => {
+        history.push('/competences');
     }
 
     return (
         <div>
             <Form className="create-form">
                 <Form.Field>
-                    <label>Objectifs 1:<textarea name="postContent" rows={4} cols={40} onChange={(e) => setObjectif1(e.target.value)} value={objectif1} /></label>
+                    <label>Objectifs futur 1:<textarea name="postContent" rows={4} cols={40} onChange={(e) => setObjectif1(e.target.value)} value={objectif1} /></label>
                 </Form.Field>
                 <Form.Field>
-                    <label>Objectifs 2:<textarea name="postContent" rows={4} cols={40} onChange={(e) => setObjectif2(e.target.value)} value={objectif2} /></label>
+                    <label>Objectifs futur 2:<textarea name="postContent" rows={4} cols={40} onChange={(e) => setObjectif2(e.target.value)} value={objectif2} /></label>
                 </Form.Field>
                 <Form.Field>
-                    <label>Objectifs 3:<textarea name="postContent" rows={4} cols={40} onChange={(e) => setObjectif3(e.target.value)} value={objectif3} /></label>
+                    <label>Objectifs futur 3:<textarea name="postContent" rows={4} cols={40} onChange={(e) => setObjectif3(e.target.value)} value={objectif3} /></label>
                 </Form.Field>
                 <Form.Field>
                     <label>ID Employe</label>
                     <input placeholder='ID Employe' onChange={(e) => setIDemploye(e.target.value)} value={IDemploye} />
                 </Form.Field>
-                <Button onClick={postData} type='button'>Suivant</Button>
-                <Link to="/accueilsite"><Button>Accueil</Button></Link>
+                <Button onClick={postData} type='button'>Enregistrer</Button>
+                <Button onClick={handleSuivantClick}>Suivant</Button>
             </Form>
         </div>
     )

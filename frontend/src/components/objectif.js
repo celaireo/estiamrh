@@ -8,7 +8,6 @@ export default function ObjectifsFixe() {
     const [objectif1, setObjectif1] = useState('');
     const [objectif2, setObjectif2] = useState('');
     const [objectif3, setObjectif3] = useState('');
-   // const [commentaireGlobal, setCommentaireGlobal] = useState('');
     const [IDemploye, setIDemploye] = useState('');
     const history = useHistory();
 
@@ -17,41 +16,44 @@ export default function ObjectifsFixe() {
             objectif1,
             objectif2,
             objectif3,
-            //commentaireGlobal,
             IDemploye,
         }).then(() => {
+            // Réinitialiser les champs après l'enregistrement
             setObjectif1('');
             setObjectif2('');
             setObjectif3('');
-            //setCommentaireGlobal('');
             setIDemploye('');
-            history.push('/pointameliorations');
         });
+    }
+
+    const handleSuivantClick = () => {
+        // Redirection vers la page suivante
+        history.push('/pointameliorations');
     }
 
     return (
         <div>
             <Form className="create-form">
                 <Form.Field>
-                    <label>Objectif 1:<textarea name="postContent" rows={4} cols={40} onChange={(e) => setObjectif1(e.target.value)} value={objectif1} /></label>
+                    <label>Objectif fixé 1:<textarea name="postContent" rows={4} cols={40} onChange={(e) => setObjectif1(e.target.value)} value={objectif1} /></label>
                 </Form.Field>
                 <Form.Field>
-                    <label>Objectif 2:<textarea name="postContent" rows={4} cols={40} onChange={(e) => setObjectif2(e.target.value)} value={objectif2} /></label>
+                    <label>Objectif fixé 2:<textarea name="postContent" rows={4} cols={40} onChange={(e) => setObjectif2(e.target.value)} value={objectif2} /></label>
                 </Form.Field>
                 <Form.Field>
-                    <label>Objectif 3:<textarea name="postContent" rows={4} cols={40} onChange={(e) => setObjectif3(e.target.value)} value={objectif3} /></label>
+                    <label>Objectif fixé 3:<textarea name="postContent" rows={4} cols={40} onChange={(e) => setObjectif3(e.target.value)} value={objectif3} /></label>
                 </Form.Field>
-               
                 <Form.Field>
                     <label>ID Employe</label>
                     <input placeholder='ID Employe' onChange={(e) => setIDemploye(e.target.value)} value={IDemploye} />
                 </Form.Field>
                 <Button onClick={postData} type='button'>Enregistrer</Button>
-                <Link to="/pointameliorations"><Button>Suivant</Button></Link>
+                <Button onClick={handleSuivantClick}>Suivant</Button>
             </Form>
         </div>
     )
 }
+
 
 
 // import React, { useState } from 'react';

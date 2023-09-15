@@ -174,11 +174,11 @@ app.delete("/savoirs/:id", (req, res) => {
 // PROJET
 
 app.post("/projets", (req, res) => {
-  const { bilan_générale, Id_employe } = req.body;
+  const { perspectivesProjet, Id_employe } = req.body;
 
   db.query(
-    "INSERT INTO projet (bilan_générale, Id_employe) VALUES (?, ?)",
-    [bilan_générale, Id_employe],
+    "INSERT INTO projet (perspectivesProjet, Id_employe) VALUES (?, ?)",
+    [perspectivesProjet, Id_employe],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -201,11 +201,11 @@ app.get("/projets", (req, res) => {
 
 app.put("/projets/:id", (req, res) => {
   const id = req.params.id;
-  const { bilan_générale, Id_employe } = req.body;
+  const { perspectivesProjet, Id_employe } = req.body;
 
   db.query(
-    "UPDATE projet SET bilan_générale = ?, Id_employe = ? WHERE Id_projet = ?",
-    [bilan_générale, Id_employe, id],
+    "UPDATE projet SET perspectivesProjet = ?, Id_employe = ? WHERE Id_projet = ?",
+    [perspectivesProjet, Id_employe, id],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -531,6 +531,15 @@ app.delete("/objectifsfixes/:id", (req, res) => {
   });
 });
 
+app.get("/recherches", (req, res) => {
+  db.query("SELECT * FROM employe LEFT JOIN bilan ON employe.Id_employe = bilan.Id_employe LEFT JOIN objectiffixe ON employe.Id_employe = objectiffixe.Id_employe LEFT JOIN objectiffutur ON employe.Id_employe = objectiffutur.Id_employe LEFT JOIN objectifvalidation ON employe.Id_employe = objectifvalidation.Id_employe LEFT JOIN amélioration ON employe.Id_employe = amélioration.Id_employe LEFT JOIN savoir ON employe.Id_employe = savoir.Id_employe LEFT JOIN projet ON employe.Id_employe = projet.Id_employe LEFT JOIN cartographie ON employe.Id_employe = cartographie.Id_employe LEFT JOIN conclusion ON employe.Id_employe = conclusion.Id_employe WHERE employe.Id_employe = 4;", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
 
 app.listen(8000, () => {
   console.log(`Le serveur est en cours d'exécution sur le port : ${8000}`);

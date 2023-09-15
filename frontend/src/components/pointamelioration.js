@@ -13,10 +13,15 @@ export default function PointAmelioration() {
             point_amélioration: point_amélioration,
             Id_employe: IDemploye
         }).then(() => {
+            // Réinitialiser les champs après l'enregistrement
             setPoint_amélioration('');
             setIDemploye('');
-            history.push('/savoirs'); // Redirection vers '/savoir'
         });
+    }
+
+    const handleSuivantClick = () => {
+        // Redirection vers '/savoirs'
+        history.push('/savoirs');
     }
 
     return (
@@ -36,7 +41,7 @@ export default function PointAmelioration() {
                                 <Button onClick={postData} type='button'>Enregistrer</Button>
                             </Grid.Column>
                             <Grid.Column>
-                                <Button onClick={() => history.push('/savoirs')}>Suivant</Button>
+                                <Button onClick={handleSuivantClick}>Suivant</Button>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
@@ -45,6 +50,7 @@ export default function PointAmelioration() {
         </div>
     )
 }
+
 
 
 // import React, { useState } from 'react';
