@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Button, Form } from 'semantic-ui-react'
-import axios from 'axios';
-import { useHistory } from 'react-router';
+import React from 'react';
+import { Form } from 'semantic-ui-react'
+// import axios from 'axios';
+// import { useHistory } from 'react-router';
 
-import BilanGenerale from './bilangenerale';
-import ObjectifsFixe from './objectif';
-import PointAmeloration from './pointamelioration';
+// import BilanGenerale from './bilangenerale';
+// import ObjectifsFixe from './objectif';
+// import PointAmeloration from './pointamelioration';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+// import { BrowserRouter as Router, Route } from 'react-router-dom';
+ import { Link } from 'react-router-dom';
 
 function Accueil() {
     return (

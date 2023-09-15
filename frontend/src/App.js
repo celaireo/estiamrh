@@ -41,7 +41,7 @@ function App() {
                 <Link class="nav-link" to="/accueilsite">Accueil <i class="fa-solid fa-house"></i></Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" to="/recherche">Recherche <i class="fa-solid fa-house"></i></Link>
+                <Link class="nav-link" to="/recherches">Recherche <i class="fa-solid fa-house"></i></Link>
               </li>
             </ul>
           </div>
