@@ -12,7 +12,7 @@ export default function PointAmeloration() {
 
     
     const postData = () => {
-        axios.post(`http://localhost:3002/posts`, {
+        axios.post(`http://localhost:8000/améliorations`, {
             pointamelioration,
             IDemploye,
         }).then(() => {

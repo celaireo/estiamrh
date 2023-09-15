@@ -17,28 +17,28 @@ function Accueil() {
         <div >
             <ul>
               <li class="nav-item1">
-                <Link class="nav-link1" to="/bilangenerale">Bilan Générale </Link>
+                <Link class="nav-link1" to="/bilans">Bilan Générale </Link>
               </li>
               <li class="nav-item1">
-                <Link class="nav-link1" to="/objectif">Objectifs Fixés </Link>
+                <Link class="nav-link1" to="/objectifsfixes">Objectifs Fixés </Link>
               </li>
               <li class="nav-item1">
-                <Link class="nav-link1" to="/pointamelioration">Point d'Améloration </Link>
+                <Link class="nav-link1" to="/pointameliorations">Point d'Améloration </Link>
               </li>
               <li class="nav-item1">
-                <Link class="nav-link1" to="/Savoir">Evaluation des savoir-faire et savoir-être </Link>
+                <Link class="nav-link1" to="/savoirs">Evaluation des savoir-faire et savoir-être </Link>
               </li>
               <li class="nav-item1">
-                <Link class="nav-link1" to="/Projet">Projet professionnel et perspectives </Link>
+                <Link class="nav-link1" to="/projets">Projet professionnel et perspectives </Link>
               </li>
               <li class="nav-item1">
-                <Link class="nav-link1" to="/objectifs2">Objectifs Futurs </Link>
+                <Link class="nav-link1" to="/objectifsfuturs">Objectifs Futurs </Link>
               </li>
               <li class="nav-item1">
-                <Link class="nav-link1" to="/cartographie">Cartographie des compétences </Link>
+                <Link class="nav-link1" to="/competences">Cartographie des compétences </Link>
               </li>
               <li class="nav-item1">
-                <Link class="nav-link1" to="/conclusion">Conclusion </Link>
+                <Link class="nav-link1" to="/conclusions">Conclusion </Link>
               </li>
             </ul>
           </div>

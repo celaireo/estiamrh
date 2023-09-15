@@ -11,7 +11,7 @@ export default function CreerConclusion() {
 
     
     const postData = () => {
-        axios.post(`http://localhost:3002/posts`, {
+        axios.post(`http://localhost:8000/conclusions`, {
             conclusion,
             IDemploye,
         }).then(() => {

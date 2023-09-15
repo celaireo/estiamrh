@@ -8,7 +8,7 @@ export default function ListEmployes() {
     const [APIData, setAPIData] = useState([]);
     const [searchTxt, setSearchTxt] = useState("");
     useEffect(() => {
-        axios.get(`http://localhost:3002/posts`).then((response) => {
+        axios.get(`http://localhost:8000/recherches`).then((response) => {
                 console.log(response.data)
                 setAPIData(response.data);
             })
@@ -16,7 +16,7 @@ export default function ListEmployes() {
 
 
     const getData = (e) => {
-        axios.get(`http://localhost:3002/posts?q=${e}`).then((getData) => {
+        axios.get(`http://localhost:8000/recherches?q=${e}`).then((getData) => {
                 setAPIData(getData.data);
             });
     };

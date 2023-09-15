@@ -12,11 +12,11 @@ export default function CreerProjet() {
 
     
     const postData = () => {
-        axios.post(`http://localhost:3002/posts`, {
+        axios.post(`http://localhost:8000/projets`, {
             projetpers,
             IDemploye,
         }).then(() => {
-            history.push('/objectifs2')
+            history.push('/objectifsfixes')
         })
     }
     return (

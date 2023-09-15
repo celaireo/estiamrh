@@ -8,15 +8,8 @@
   background-color: #212121;
   color: whitesmoke;
   flex-direction: column;
-<<<<<<< HEAD
-  background-image:url("https://starwalk.space/gallery/images/what-is-supermoon/1920x1080.jpg") ;
 }
 
-
-=======
-}
-
->>>>>>> 3eb9b7d29964cbe8226703933cbc6a966c30b7f2
 .main-header{
   font-family: 'Montserrat', sans-serif;
 }
@@ -26,8 +19,6 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 12px !important;
 }
-<<<<<<< HEAD
-=======
 
 .bilan-form label{
   color: whitesmoke !important;
@@ -53,7 +44,6 @@
   font-size: 20px !important;
 }
 
->>>>>>> 3eb9b7d29964cbe8226703933cbc6a966c30b7f2
 .fa-trash  {
   color: red;
 }
@@ -74,12 +64,6 @@
   color: palevioletred;
 }
 
-<<<<<<< HEAD
-
-.navbar {
-  text-align: center;
-}
-=======
 .main {
   background-image:url("https://starwalk.space/gallery/images/what-is-supermoon/1920x1080.jpg") ;
 }
@@ -104,4 +88,3 @@
   font-weight: bold;
 }
 
->>>>>>> 3eb9b7d29964cbe8226703933cbc6a966c30b7f2

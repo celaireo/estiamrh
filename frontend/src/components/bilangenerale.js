@@ -11,11 +11,11 @@ export default function CreerBilan() {
 
     
     const postData = () => {
-        axios.post(`http://localhost:3002/posts`, {
+        axios.post(`http://localhost:8000/bilans`, {
             bilangenerale,
             IDemploye,
         }).then(() => {
-            history.push('/objectif')
+            history.push('/objectiffixes')
         })
     }
     return (

@@ -12,7 +12,7 @@ export default function Login() {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.get('http://localhost:3002/posts');
+      const response = await axios.get('http://localhost:8000/employes');
       const users = response.data;
       const user = users.find(
         (user) => user.email === email && user.password === password

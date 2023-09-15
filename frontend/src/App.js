@@ -1,18 +1,11 @@
 import './App.css';
 
-<<<<<<< HEAD
-import LoginForm from './components/LoginForm';
-import RegistrationForm from './components/RegistrationForm';
-=======
-
-
->>>>>>> 3eb9b7d29964cbe8226703933cbc6a966c30b7f2
 import Connexion from './components/connexion';
+
 import CreerEmployes from './components/creerEmployes';
 import ListEmployes from './components/listEmployes';
 import ModifEmployes from './components/modifEmployes';
-<<<<<<< HEAD
-=======
+
 import Accueilsite from './components/accueilsite';
 import Recherche from './components/recherche';
 import BilanGenerale from './components/bilangenerale';
@@ -23,15 +16,10 @@ import Projetpers from './components/Projet';
 import ObjectifsFutur from './components/objectifs2';
 import Compétence from './components/cartographie';
 import Conclusion from './components/conclusion';
->>>>>>> 3eb9b7d29964cbe8226703933cbc6a966c30b7f2
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 3eb9b7d29964cbe8226703933cbc6a966c30b7f2
 function App() {
   return (
     <Router>
@@ -49,15 +37,12 @@ function App() {
               <li class="nav-item">
                 <Link class="nav-link" to="/listEmployes">Listage <i class="fa-sharp fa-solid fa-bookmark"></i></Link>
               </li>
-<<<<<<< HEAD
-=======
               <li class="nav-item">
                 <Link class="nav-link" to="/accueilsite">Accueil <i class="fa-solid fa-house"></i></Link>
               </li>
               <li class="nav-item">
                 <Link class="nav-link" to="/recherche">Recherche <i class="fa-solid fa-house"></i></Link>
               </li>
->>>>>>> 3eb9b7d29964cbe8226703933cbc6a966c30b7f2
             </ul>
           </div>
         </div>
@@ -65,16 +50,6 @@ function App() {
       <div className="main">
         <h1 className="main-header"> <i class="fa-solid fa-feather"></i> ESTIAM RH <i class="fa-solid fa-feather"></i></h1>
         <div>
-<<<<<<< HEAD
-        
-        <Route exact path="/" component={LoginForm} />
-        
-        <Route path="/register" component={RegistrationForm} />
-      </div>
-
-        <div>
-=======
->>>>>>> 3eb9b7d29964cbe8226703933cbc6a966c30b7f2
           <Route exact path='/connexion' component={Connexion} />
         <div>
           <Route exact path='/creerEmployes' component={CreerEmployes} />
@@ -83,39 +58,36 @@ function App() {
         <div style={{ marginTop: 20 }}>
           <Route exact path='/listEmployes' component={ListEmployes} />
         </div>
-<<<<<<< HEAD
-=======
         <div style={{ marginTop: 20 }}>
           <Route exact path='/accueilsite' component={Accueilsite} />
         </div>
         <div style={{ marginTop: 20 }}>
-          <Route exact path='/recherche' component={Recherche} />
+          <Route exact path='/recherches' component={Recherche} />
         </div>
         <div style={{ marginTop: 20 }}>
-          <Route exact path='/bilangenerale' component={BilanGenerale} />
+          <Route exact path='/bilans' component={BilanGenerale} />
         </div>
         <div style={{ marginTop: 20 }}>
-          <Route exact path='/objectif' component={ObjectifsFixe} />
+          <Route exact path='/objectifs' component={ObjectifsFixe} />
         </div>
         <div style={{ marginTop: 20 }}>
-          <Route exact path='/pointamelioration' component={PointAmeloration} />
+          <Route exact path='/pointameliorations' component={PointAmeloration} />
         </div>
         <div style={{ marginTop: 20 }}>
-          <Route exact path='/Savoir' component={EvalSavoir} />
+          <Route exact path='/savoirs' component={EvalSavoir} />
         </div>
         <div style={{ marginTop: 20 }}>
-          <Route exact path='/Projet' component={Projetpers} />
+          <Route exact path='/projets' component={Projetpers} />
         </div>
         <div style={{ marginTop: 20 }}>
-          <Route exact path='/objectifs2' component={ObjectifsFutur} />
+          <Route exact path='/objectifsfuturs' component={ObjectifsFutur} />
         </div>
         <div style={{ marginTop: 20 }}>
-          <Route exact path='/cartographie' component={Compétence} />
+          <Route exact path='/competences' component={Compétence} />
         </div>
         <div style={{ marginTop: 20 }}>
-          <Route exact path='/conclusion' component={Conclusion} />
+          <Route exact path='/conclusions' component={Conclusion} />
         </div>
->>>>>>> 3eb9b7d29964cbe8226703933cbc6a966c30b7f2
         <div>
         <Route path='/modifEmployes' component={ModifEmployes} />
         </div>

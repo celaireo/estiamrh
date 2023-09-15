@@ -19,7 +19,7 @@ export default function EvalSavoir() {
 
     
     const postData = () => {
-        axios.post(`http://localhost:3002/posts`, {
+        axios.post(`http://localhost:8000/savoirs`, {
             evalsavoir1,
             evalsavoir2,
             evalsavoir3,
@@ -30,7 +30,7 @@ export default function EvalSavoir() {
             evalsavoir8,
             IDemploye,
         }).then(() => {
-            history.push('/Projet')
+            history.push('/projets')
         })
     }
     return (

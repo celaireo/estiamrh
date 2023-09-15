@@ -16,7 +16,7 @@ export default function Objectifsfutur() {
 
     
     const postData = () => {
-        axios.post(`http://localhost:3002/posts`, {
+        axios.post(`http://localhost:8000/objectifsfuturs`, {
             objectiffutur1,
             objectiffutur2,
             objectiffutur3,
@@ -24,7 +24,7 @@ export default function Objectifsfutur() {
             objectiffutur5,
             IDemploye,
         }).then(() => {
-            history.push('/cartographie')
+            history.push('/competences')
         })
     }
     return (

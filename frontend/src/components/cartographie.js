@@ -18,7 +18,7 @@ export default function Compétence() {
 
     
     const postData = () => {
-        axios.post(`http://localhost:3002/posts`, {
+        axios.post(`http://localhost:8000/competences`, {
             compétence1,
             compétence2,
             compétence3,

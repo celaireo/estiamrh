@@ -17,7 +17,7 @@ export default function Objectifsfixé() {
 
     
     const postData = () => {
-        axios.post(`http://localhost:3002/posts`, {
+        axios.post(`http://localhost:8000/objectifs`, {
             objectiffixé1,
             objectiffixé2,
             objectiffixé3,
@@ -26,7 +26,7 @@ export default function Objectifsfixé() {
             commentaireglobal,
             IDemploye,
         }).then(() => {
-            history.push('/pointamelioration')
+            history.push('/pointameliorations')
         })
     }
     return (
