@@ -68,7 +68,7 @@ function App() {
           <Route exact path='/bilans' component={BilanGenerale} />
         </div>
         <div style={{ marginTop: 20 }}>
-          <Route exact path='/objectifs' component={ObjectifsFixe} />
+          <Route exact path='/objectifsfixes' component={ObjectifsFixe} />
         </div>
         <div style={{ marginTop: 20 }}>
           <Route exact path='/pointameliorations' component={PointAmeloration} />

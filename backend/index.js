@@ -236,14 +236,12 @@ app.post("/objectifsfuturs", (req, res) => {
     objectif1,
     objectif2,
     objectif3,
-    objectif4,
-    objectif5,
     Id_employe,
   } = req.body;
 
   db.query(
-    "INSERT INTO objectiffutur (objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe) VALUES (?, ?, ?, ?, ?, ?)",
-    [objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe],
+    "INSERT INTO objectiffutur (objectif1, objectif2, objectif3, Id_employe) VALUES (?, ?, ?, ?)",
+    [objectif1, objectif2, objectif3, Id_employe],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -270,14 +268,12 @@ app.put("/objectifsfuturs/:id", (req, res) => {
     objectif1,
     objectif2,
     objectif3,
-    objectif4,
-    objectif5,
     Id_employe,
   } = req.body;
 
   db.query(
-    "UPDATE objectiffutur SET objectif1 = ?, objectif2 = ?, objectif3 = ?, objectif4 = ?, objectif5 = ?, Id_employe = ? WHERE Id_objectiffutur = ?",
-    [objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe, id],
+    "UPDATE objectiffutur SET objectif1 = ?, objectif2 = ?, objectif3 = ?, Id_employe = ? WHERE Id_objectiffutur = ?",
+    [objectif1, objectif2, objectif3, Id_employe, id],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -307,7 +303,7 @@ app.post("/pointameliorations", (req, res) => {
   const { point_amélioration, Id_employe } = req.body;
 
   db.query(
-    "INSERT INTO amelioration (point_amélioration, Id_employe) VALUES (?, ?)",
+    "INSERT INTO amélioration (point_amélioration, Id_employe) VALUES (?, ?)",
     [point_amélioration, Id_employe],
     (err, result) => {
       if (err) {
@@ -334,7 +330,7 @@ app.put("/pointameliorations/:id", (req, res) => {
   const { point_amélioration, Id_employe } = req.body;
 
   db.query(
-    "UPDATE amelioration SET point_amélioration = ?, Id_employe = ? WHERE Id_amélioration = ?",
+    "UPDATE amélioration SET point_amélioration = ?, Id_employe = ? WHERE Id_amélioration = ?",
     [point_amélioration, Id_employe, id],
     (err, result) => {
       if (err) {
@@ -362,9 +358,9 @@ app.delete("/pointameliorations/:id", (req, res) => {
 
 // BILANS
 
-app.post("/bilans", (req, res) => { const { bilan_générale, Id_employe } = req.body;
+app.post("/bilans", (req, res) => { const { bilangenerale, IDemploye } = req.body;
 
-db.query( "INSERT INTO bilan (bilan_générale, Id_employe) VALUES (?, ?)", [bilan_générale, Id_employe], (err, result) => { if (err) { console.log(err); } else { res.send("Bilan ajouté"); } } ); });
+db.query( "INSERT INTO bilan (bilan_générale, Id_employe) VALUES (?, ?)", [bilangenerale, IDemploye], (err, result) => { if (err) { console.log(err); } else { res.send("Bilan ajouté"); } } ); });
 
 app.get("/bilans", (req, res) => {
   db.query("SELECT * FROM bilan", (err, result) => {
@@ -376,9 +372,9 @@ app.get("/bilans", (req, res) => {
   });
 });
 
-app.put("/bilans/:id", (req, res) => { const id = req.params.id; const { bilan_générale, Id_employe } = req.body;
+app.put("/bilans/:id", (req, res) => { const id = req.params.id; const { bilangenerale, IDemploye } = req.body;
 
-db.query( "UPDATE bilan SET bilan_générale = ?, Id_employe = ? WHERE Id_bilan = ?", [bilan_générale, Id_employe, id], (err, result) => { if (err) { console.log(err); } else { res.send("Bilan mis à jour"); } } ); });
+db.query( "UPDATE bilan SET bilan_générale = ?, Id_employe = ? WHERE Id_bilan = ?", [bilangenerale, IDemploye, id], (err, result) => { if (err) { console.log(err); } else { res.send("Bilan mis à jour"); } } ); });
 
 app.delete("/bilans/:id", (req, res) => {
   const id = req.params.id;
@@ -396,11 +392,11 @@ db.query("DELETE FROM bilan WHERE Id_bilan = ?", id, (err, result) => {
 //COMPETENCES (cartographie)
 
 app.post("/competences", (req, res) => {
-  const { compétence1, compétence2, compétence3, compétence4, compétence5, compétence6, compétence7, Id_employe } = req.body;
+  const { compétence1, compétence2, compétence3, compétence4, Id_employe } = req.body;
 
   db.query(
-    "INSERT INTO cartographie (compétence1, compétence2, compétence3, compétence4, compétence5, compétence6, compétence7, Id_employe) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-    [compétence1, compétence2, compétence3, compétence4, compétence5, compétence6, compétence7, Id_employe],
+    "INSERT INTO cartographie (compétence1, compétence2, compétence3, compétence4, Id_employe) VALUES (?, ?, ?, ?, ?)",
+    [compétence1, compétence2, compétence3, compétence4, Id_employe],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -423,11 +419,11 @@ app.get("/competences", (req, res) => {
 
 app.put("/competences/:id", (req, res) => {
   const id = req.params.id;
-  const { compétence1, compétence2, compétence3, compétence4, compétence5, compétence6, compétence7, Id_employe } = req.body;
+  const { compétence1, compétence2, compétence3, compétence4, Id_employe } = req.body;
 
   db.query(
-    "UPDATE cartographie SET compétence1 = ?, compétence2 = ?, compétence3 = ?, compétence4 = ?, compétence5 = ?, compétence6 = ?, compétence7 = ?, Id_employe = ? WHERE Id_cartographie = ?",
-    [compétence1, compétence2, compétence3, compétence4, compétence5, compétence6, compétence7, Id_employe, id],
+    "UPDATE cartographie SET compétence1 = ?, compétence2 = ?, compétence3 = ?, compétence4 = ?, Id_employe = ? WHERE Id_cartographie = ?",
+    [compétence1, compétence2, compétence3, compétence4, Id_employe, id],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -487,9 +483,9 @@ db.query("DELETE FROM conclusion WHERE Id_conclusion = ?", id, (err, result) => 
 //OBJECTIFS FIXES
 
 app.post("/objectifsfixes", (req, res) => {
-  const { objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe } = req.body;
+  const { objectif1, objectif2, objectif3, Id_employe } = req.body;
 
-  db.query( "INSERT INTO objectiffixe (objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe) VALUES (?, ?, ?, ?, ?, ?)", [objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe], (err, result) => {
+  db.query( "INSERT INTO objectiffixe (objectif1, objectif2, objectif3, Id_employe) VALUES (?, ?, ?, ?)", [objectif1, objectif2, objectif3, Id_employe], (err, result) => {
     if (err) {
       console.log(err);
     } else {
@@ -512,9 +508,9 @@ app.get("/objectifsfixes", (req, res) => {
 
 app.put("/objectifsfixes/:id", (req, res) => {
   const id = req.params.id;
-  const { objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe } = req.body;
+  const { objectif1, objectif2, objectif3, Id_employe } = req.body;
 
-  db.query( "UPDATE objectiffixe SET objectif1 = ?, objectif2 = ?, objectif3 = ?, objectif4 = ?, objectif5 = ?, Id_employe = ? WHERE Id_objectiffixé = ?", [objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe, id], (err, result) => {
+  db.query( "UPDATE objectiffixe SET objectif1 = ?, objectif2 = ?, objectif3 = ?, Id_employe = ? WHERE Id_objectiffixé = ?", [objectif1, objectif2, objectif3, Id_employe, id], (err, result) => {
     if (err) {
       console.log(err);
     } else {
