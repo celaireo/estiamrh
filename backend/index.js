@@ -359,6 +359,183 @@ app.delete("/pointameliorations/:id", (req, res) => {
 });
 
 
+
+// BILANS
+
+app.post("/bilans", (req, res) => { const { bilan_générale, Id_employe } = req.body;
+
+db.query( "INSERT INTO bilan (bilan_générale, Id_employe) VALUES (?, ?)", [bilan_générale, Id_employe], (err, result) => { if (err) { console.log(err); } else { res.send("Bilan ajouté"); } } ); });
+
+app.get("/bilans", (req, res) => {
+  db.query("SELECT * FROM bilan", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+app.put("/bilans/:id", (req, res) => { const id = req.params.id; const { bilan_générale, Id_employe } = req.body;
+
+db.query( "UPDATE bilan SET bilan_générale = ?, Id_employe = ? WHERE Id_bilan = ?", [bilan_générale, Id_employe, id], (err, result) => { if (err) { console.log(err); } else { res.send("Bilan mis à jour"); } } ); });
+
+app.delete("/bilans/:id", (req, res) => {
+  const id = req.params.id;
+
+db.query("DELETE FROM bilan WHERE Id_bilan = ?", id, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send("Bilan supprimé");
+    }
+  });
+});
+
+
+//COMPETENCES (cartographie)
+
+app.post("/competences", (req, res) => {
+  const { compétence1, compétence2, compétence3, compétence4, compétence5, compétence6, compétence7, Id_employe } = req.body;
+
+  db.query(
+    "INSERT INTO cartographie (compétence1, compétence2, compétence3, compétence4, compétence5, compétence6, compétence7, Id_employe) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+    [compétence1, compétence2, compétence3, compétence4, compétence5, compétence6, compétence7, Id_employe],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Cartographie ajoutée");
+      }
+    }
+  );
+});
+
+app.get("/competences", (req, res) => {
+  db.query("SELECT * FROM cartographie", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+app.put("/competences/:id", (req, res) => {
+  const id = req.params.id;
+  const { compétence1, compétence2, compétence3, compétence4, compétence5, compétence6, compétence7, Id_employe } = req.body;
+
+  db.query(
+    "UPDATE cartographie SET compétence1 = ?, compétence2 = ?, compétence3 = ?, compétence4 = ?, compétence5 = ?, compétence6 = ?, compétence7 = ?, Id_employe = ? WHERE Id_cartographie = ?",
+    [compétence1, compétence2, compétence3, compétence4, compétence5, compétence6, compétence7, Id_employe, id],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Cartographie mise à jour");
+      }
+    }
+  );
+});
+
+app.delete("/competences/:id", (req, res) => {
+  const id = req.params.id;
+
+  db.query("DELETE FROM cartographie WHERE Id_cartographie = ?", id, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send("Cartographie supprimée");
+    }
+  });
+});
+
+
+// CONCLUSION
+
+app.post("/conclusions", (req, res) => { const { Id_conclusion, conclusion, Id_employe } = req.body;
+
+db.query( "INSERT INTO conclusion (Id_conclusion, conclusion, Id_employe) VALUES (?, ?, ?)", [Id_conclusion, conclusion, Id_employe], (err, result) => { if (err) { console.log(err); } else { res.send("Conclusion ajoutée"); } } ); });
+
+app.get("/conclusions", (req, res) => {
+  db.query("SELECT * FROM conclusion", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+app.put("/conclusions/:id", (req, res) => { const id = req.params.id; const { Id_conclusion, conclusion, Id_employe } = req.body;
+
+db.query( "UPDATE conclusion SET Id_conclusion = ?, conclusion = ?, Id_employe = ? WHERE Id_conclusion = ?", [Id_conclusion, conclusion, Id_employe, id], (err, result) => { if (err) { console.log(err); } else { res.send("Conclusion mise à jour"); } } ); });
+
+app.delete("/conclusions/:id", (req, res) => {
+  const id = req.params.id;
+
+db.query("DELETE FROM conclusion WHERE Id_conclusion = ?", id, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send("Conclusion supprimée");
+    }
+   });
+});
+
+
+//OBJECTIFS FIXES
+
+app.post("/objectifsfixes", (req, res) => {
+  const { objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe } = req.body;
+
+  db.query( "INSERT INTO objectiffixe (objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe) VALUES (?, ?, ?, ?, ?, ?)", [objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe], (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send("Objectif fixé ajouté");
+    }
+  });
+});
+
+app.get("/objectifsfixes", (req, res) => {
+  
+
+  db.query("SELECT * FROM objectiffixe ", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+app.put("/objectifsfixes/:id", (req, res) => {
+  const id = req.params.id;
+  const { objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe } = req.body;
+
+  db.query( "UPDATE objectiffixe SET objectif1 = ?, objectif2 = ?, objectif3 = ?, objectif4 = ?, objectif5 = ?, Id_employe = ? WHERE Id_objectiffixé = ?", [objectif1, objectif2, objectif3, objectif4, objectif5, Id_employe, id], (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send("Objectif fixé mis à jour");
+    }
+  });
+});
+
+app.delete("/objectifsfixes/:id", (req, res) => {
+  const id = req.params.id;
+
+  db.query("DELETE FROM objectiffixe WHERE Id_objectiffixé = ?", id, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send("Objectif fixé supprimé");
+    }
+  });
+});
+
+
 app.listen(8000, () => {
   console.log(`Le serveur est en cours d'exécution sur le port : ${8000}`);
 });
