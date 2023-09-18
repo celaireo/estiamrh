@@ -40,6 +40,9 @@ function Accueil() {
               <li class="nav-item1">
                 <Link class="nav-link1" to="/conclusions">Conclusion </Link>
               </li>
+              <li class="nav-item1">
+                <Link class="nav-link1" to="/creerEmployes">Création d'employes</Link>
+              </li>
             </ul>
           </div>
         </Form>

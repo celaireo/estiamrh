@@ -463,6 +463,7 @@ app.get("/conclusions", (req, res) => {
   });
 });
 
+
 app.put("/conclusions/:id", (req, res) => { const id = req.params.id; const { Id_conclusion, conclusion, Id_employe } = req.body;
 
 db.query( "UPDATE conclusion SET Id_conclusion = ?, conclusion = ?, Id_employe = ? WHERE Id_conclusion = ?", [Id_conclusion, conclusion, Id_employe, id], (err, result) => { if (err) { console.log(err); } else { res.send("Conclusion mise à jour"); } } ); });
@@ -495,7 +496,6 @@ app.post("/objectifsfixes", (req, res) => {
 });
 
 app.get("/objectifsfixes", (req, res) => {
-  
 
   db.query("SELECT * FROM objectiffixe ", (err, result) => {
     if (err) {

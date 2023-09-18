@@ -83,7 +83,7 @@ export default function ListEmployes() {
                             <Table.Row>
                                 <Table.Cell>{data.Prenom_employe}</Table.Cell>
                                 <Table.Cell>{data.Nom_employe}</Table.Cell>
-                                <Table.Cell>{data.Email_Employe}</Table.Cell>
+                                <Table.Cell>{data.Email_employe}</Table.Cell>
                                 <Table.Cell>{data.checkbox ? 'Checked' : 'Unchecked'}</Table.Cell>
                                 <Link to='/modifEmployes'>
                                     <Table.Cell> 
