@@ -1,36 +1,37 @@
-##ESTIAMRH
+## ESTIAMRH
 
-#Description 
+# Description 
 C’est une plateforme en ligne cree pour faciliter la gestion des ressources humaines. 
 L'objectif visé est de permettre aux ressources humaines, la réalisation de les entretiens annuels du personnel 
 de l’ESTIAM.
 
 
-#Installation
+# Installation
 Cloner le dépôt GitHub :
 
 bash
 Copy code
-git clone https://github.com/votre_utilisateur/votre_application.git
+git clone https://github.com/celaireo/estiamrh.git
 
-#Installer les dépendances frontend :
+# Installer les dépendances frontend :
 bash
 Copy code
 cd frontend
 npm install
 
-#Installer les dépendances backend :
+# Installer les dépendances backend :
 
 bash
 Copy code
 cd ../backend
 npm install
-Configurer la base de données MySQL :
+
+# Configurer la base de données MySQL :
 
 Créez une base de données MySQL et importez le fichier SQL fourni dans backend/database/schema.sql.
 Configurer les variables d'environnement :
 
-Créez un fichier .env dans le dossier backend et configurez les variables suivantes :
+# Créez un fichier .env dans le dossier backend et configurez les variables suivantes :
 makefile
 Copy code
 PORT=3001
