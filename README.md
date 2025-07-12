@@ -12,17 +12,17 @@ Cloner le dépôt GitHub :
 - Copy code: git clone https://github.com/celaireo/estiamrh.git
 
 ## Installer les dépendances frontend :
-bash
-Copy code
-cd frontend
-npm install
+- bash
+- Copy code
+- cd frontend
+- npm install
 
 ## Installer les dépendances backend :
 
-bash
-Copy code
-cd ../backend
-npm install
+- bash
+- Copy code
+- cd ../backend
+- npm install
 
 ## Configurer la base de données MySQL :
 
@@ -30,26 +30,27 @@ Créez une base de données MySQL et importez le fichier SQL fourni dans backend
 Configurer les variables d'environnement :
 
 ## Créez un fichier .env dans le dossier backend et configurez les variables suivantes :
-makefile
-Copy code
-PORT=3001
-DB_HOST=localhost
-DB_USER=votre_utilisateur_mysql
-DB_PASSWORD=votre_mot_de_passe_mysql
-DB_DATABASE=votre_base_de_données_mysql
-Utilisation
+-makefile
+- Copy code
+- PORT=3001
+- DB_HOST=localhost
+- DB_USER=votre_utilisateur_mysql
+- DB_PASSWORD=votre_mot_de_passe_mysql
+- DB_DATABASE=votre_base_de_données_mysql
+
+## Utilisation
 Démarrer le serveur backend :
 
-bash
-Copy code
-cd backend
-npm start
-Démarrer l'application frontend :
+- bash
+- Copy code
+- cd backend
+- npm start
 
-bash
-Copy code
-cd ../frontend
-npm start
+## Démarrer l'application frontend :
+- bash
+- Copy code
+- cd ../frontend
+- npm start
 
 ## L'application sera accessible à l'adresse http://localhost:3000.
 
